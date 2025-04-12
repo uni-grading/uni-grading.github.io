@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Grade Calculator</h1>
+        
+        <div class="info-box">
+            <p>You can view your current grades for Year 2 and the first term of Year 3 <a href="https://pages.gre.ac.uk/BannerExtensibility/customPage/page/SSBstudentGrades" target="_blank">here</a>.</p>
+        </div>
+        
+        <div class="results">
+            <div class="result-item">
+                <h3>Year 2 Grade:</h3>
+                <div id="year2-result" class="result-value">0</div>
+            </div>
+            <div class="result-item">
+                <h3>Year 3 Grade:</h3>
+                <div id="year3-result" class="result-value">0</div>
+            </div>
+            <div class="result-item final-grade">
+                <h3>Final Grade:</h3>
+                <div id="final-result" class="result-value">0</div>
+                <div id="calculation-method" class="calculation-method"></div>
+            </div>
+        </div>
+
+        <div class="year-container">
+            <h2>Year 2 Modules</h2>
+            
+            <div class="pathway-selector">
+                <label for="pathway">Pathway:</label>
+                <select id="pathway" onchange="switchPathway()">
+                    <option value="programming">Programming Pathway</option>
+                    <option value="modelling">3D Modelling Pathway</option>
+                </select>
+            </div>
+            
+            <div class="modules">
+                <div class="module-row">
+                    <label for="y2-gdd">Games Design and Development</label>
+                    <input type="number" id="y2-gdd" min="0" max="100" placeholder="0-100" onchange="validateInput(this); calculateGrades();">
+                </div>
+                
+                <div class="module-row">
+                    <label for="y2-agile">Agile Development with SCRUM</label>
+                    <input type="number" id="y2-agile" min="0" max="100" placeholder="0-100" onchange="validateInput(this); calculateGrades();">
+                </div>
+                
+                <div class="module-row">
+                    <label for="y2-research">Research Methods for Games and Digital Media</label>
+                    <input type="number" id="y2-research" min="0" max="100" placeholder="0-100" onchange="validateInput(this); calculateGrades();">
+                </div>
+                
+                <div class="module-row">
+                    <label for="y2-career">Career Development</label>
+                    <input type="number" id="y2-career" min="0" max="100" placeholder="0-100" onchange="validateInput(this); calculateGrades();">
+                </div>
+                
+                <div class="module-row">
+                    <label for="y2-installation">Installation Development Project</label>
+                    <input type="number" id="y2-installation" min="0" max="100" placeholder="0-100" onchange="validateInput(this); calculateGrades();">
+                </div>
+                
+                <div class="module-row programming-module">
+                    <label for="y2-games-tech">Games Technology</label>
+                    <input type="number" id="y2-games-tech" min="0" max="100" placeholder="0-100" onchange="validateInput(this); calculateGrades();">
+                </div>
+                
+                <div class="module-row modelling-module" style="display: none;">
+                    <label for="y2-gert">Game Engine Rendering Techniques</label>
+                    <input type="number" id="y2-gert" min="0" max="100" placeholder="0-100" onchange="validateInput(this); calculateGrades();">
+                </div>
+                
+                <div class="module-row modelling-module" style="display: none;">
+                    <label for="y2-animation">Character Animation</label>
+                    <input type="number" id="y2-animation" min="0" max="100" placeholder="0-100" onchange="validateInput(this); calculateGrades();">
+                </div>
+            </div>
+        </div>
+        
+        <div class="year-container">
+            <h2>Year 3 Modules</h2>
+            
+            <div class="modules">
+                <div class="module-row">
+                    <label for="y3-group">Final Year Group Project (30 credits)</label>
+                    <input type="number" id="y3-group" min="0" max="100" placeholder="0-100" onchange="validateInput(this); calculateGrades();">
+                </div>
+                
+                <div class="module-row">
+                    <label for="y3-individual">Final Year Individual Project (30 credits)</label>
+                    <input type="number" id="y3-individual" min="0" max="100" placeholder="0-100" onchange="validateInput(this); calculateGrades();">
+                </div>
+                
+                <div class="module-row">
+                    <label for="y3-rapid">Rapid Prototyping</label>
+                    <input type="number" id="y3-rapid" min="0" max="100" placeholder="0-100" onchange="validateInput(this); calculateGrades();">
+                </div>
+                
+                <div class="module-row">
+                    <label for="y3-realities">External Realities / Game Audio</label>
+                    <input type="number" id="y3-realities" min="0" max="100" placeholder="0-100" onchange="validateInput(this); calculateGrades();">
+                </div>
+                
+                <div class="module-row">
+                    <label for="y3-shader">Shader Programming / Character Animation And Control</label>
+                    <input type="number" id="y3-shader" min="0" max="100" placeholder="0-100" onchange="validateInput(this); calculateGrades();">
+                </div>
+                
+                <div class="module-row">
+                    <label for="y3-ai">Artificial Intelligence for Games / Visual Effects</label>
+                    <input type="number" id="y3-ai" min="0" max="100" placeholder="0-100" onchange="validateInput(this); calculateGrades();">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
