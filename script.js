@@ -82,12 +82,12 @@ function calculateFinalGrade(year2Grade, year3Grade) {
     if (method1 >= method2) {
         return {
             grade: method1,
-            method: "80/20 weighting (Year 3: 80%, Year 2: 20%)"
+            method: "80/20 weighting will be used with those grades (Year 3: 80%, Year 2: 20%)"
         };
     } else {
         return {
             grade: method2,
-            method: "90/10 weighting (Year 3: 90%, Year 2: 10%)"
+            method: "90/10 weighting will be used with those grades (Year 3: 90%, Year 2: 10%)"
         };
     }
 }
