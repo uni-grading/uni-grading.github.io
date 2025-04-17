@@ -51,7 +51,8 @@ function calculateYear2Grade() {
 
 function calculateYear3Grade() {
     const modules = [
-        { name: 'y3-group', grade: getModuleGrade('y3-group'), credits: 30 },
+        { name: 'y3-group', grade: getModuleGrade('y3-group'), credits: 15 },
+        { name: 'y3-group2', grade: getModuleGrade('y3-group'), credits: 15 },
         { name: 'y3-individual', grade: getModuleGrade('y3-individual'), credits: 30 },
         { name: 'y3-rapid', grade: getModuleGrade('y3-rapid'), credits: 15 },
         { name: 'y3-realities', grade: getModuleGrade('y3-realities'), credits: 15 },
@@ -76,8 +77,8 @@ function calculateYear3Grade() {
 }
 
 function calculateFinalGrade(year2Grade, year3Grade) {
-    const method1 = year3Grade * 0.8 + year2Grade * 0.2;     // 80/20 split
-    const method2 = year3Grade * 0.9 + year2Grade * 0.1;     // 90/10 split
+    const method1 = year3Grade * 0.8 + year2Grade * 0.2;
+    const method2 = year3Grade * 0.9 + year2Grade * 0.1;
     
     if (method1 >= method2) {
         return {
